@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="brand">
-            <svg class="brand-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <svg class="brand-logo" viewBox="0 8 118 104" xmlns="http://www.w3.org/2000/svg">
               <circle cx="60" cy="62" r="46" fill="none" stroke="#AECC1E" stroke-width="6" stroke-linecap="round" stroke-dasharray="245 60" transform="rotate(-35 60 62)"/>
               <g stroke="#7FE0CE" stroke-width="3" stroke-linecap="round" fill="none">
                 <circle cx="8" cy="46" r="3.2" fill="#7FE0CE"/><path d="M8 46 H22"/>
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Taore LeVanya Limited. All Rights Reserved.</span>
+        <span>&copy; 2026 Taore LeVanya Limited. All Rights Reserved.</span>
         <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></span>
       </div>
     </div>

@@ -17,14 +17,7 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><circle cx=%2260%22 cy=%2260%22 r=%2255%22 fill=%22%230E4B47%22/><text x=%2260%22 y=%2278%22 font-size=%2260%22 fill=%22%23AECC1E%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-weight=%22bold%22>T</text></svg>"
     />
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="404.html" />
-    <link rel="stylesheet" href="about.html" />
-    <link rel="stylesheet" href="blog.html" />
-    <link rel="stylesheet" href="contact.html" />
-    <link rel="stylesheet" href="faq.html" />
-    <link rel="stylesheet" href="products.html" />
-    <link rel="stylesheet" href="services.html" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <!-- ===================== HEADER ===================== -->
@@ -33,7 +26,7 @@
         <a href="index.html" class="brand">
           <svg
             class="brand-logo"
-            viewBox="0 0 120 120"
+            viewBox="0 8 118 104"
             xmlns="http://www.w3.org/2000/svg"
           >
             <circle
@@ -80,10 +73,9 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li>
-            <a href="contact.html" class="btn btn-lime mobile-cta"
-              >Let's Talk</a
-            >
+          <li class="mobile-cta-group">
+            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+            <a href="contact.html" class="btn btn-lime">Let's Talk</a>
           </li>
         </ul>
         <div class="nav-actions">
@@ -153,65 +145,11 @@
           </div>
         </div>
         <div class="hero-art reveal in">
-          <div class="hero-blob"></div>
-          <div class="hero-dots"></div>
-          <div class="hero-bubble">Hello, Business Owner 👋</div>
-          <div class="mock-stack">
-            <div class="mock-laptop">
-              <div class="mock-screen">
-                <div class="mock-top">
-                  <strong>Dashboard</strong
-                  ><span class="mock-pill">This Month</span>
-                </div>
-                <div class="mock-kpis">
-                  <div><strong>12,340</strong><span>Visitors</span></div>
-                  <div><strong>8,400</strong><span>Leads</span></div>
-                  <div><strong>4,210</strong><span>Customers</span></div>
-                </div>
-                <div class="mock-chart">
-                  <svg viewBox="0 0 300 70" preserveAspectRatio="none">
-                    <polyline
-                      points="0,55 40,42 80,48 120,25 160,35 200,15 240,28 300,10"
-                      fill="none"
-                      stroke="#1D8A7C"
-                      stroke-width="3"
-                    />
-                    <polygon
-                      points="0,55 40,42 80,48 120,25 160,35 200,15 240,28 300,10 300,70 0,70"
-                      fill="#1D8A7C"
-                      opacity="0.12"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div class="mock-base"></div>
-            </div>
-            <div class="mock-phone">
-              <div class="mock-notch"></div>
-              <div class="mock-screen">
-                <div class="mock-top">
-                  <strong style="font-size: 10px"
-                    >Hello, Business Owner 👋</strong
-                  >
-                </div>
-                <div
-                  class="mock-kpis"
-                  style="grid-template-columns: 1fr; margin-bottom: 6px"
-                >
-                  <div>
-                    <span>Total Revenue</span><strong>₦12,540,000</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <span>Order #2341</span
-                  ><strong style="color: #1d8a7c">₦350,000</strong>
-                </div>
-                <div class="row">
-                  <span>Order #2340</span
-                  ><strong style="color: #1d8a7c">₦120,000</strong>
-                </div>
-              </div>
-            </div>
+          <div class="hero-photo-frame">
+            <img
+              src="./media/hero-image.webp"
+              alt="The Taore LeVanya team reviewing a product architecture diagram together in a meeting room"
+            />
           </div>
         </div>
       </div>
@@ -242,18 +180,23 @@
         </div>
         <div class="grid-4">
           <div class="card reveal">
-            <div class="card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
+            <div class="card-photo">
+              <img
+                src="https://images.pexels.com/photos/19805876/pexels-photo-19805876.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="African software engineer coding on a desktop and laptop in a modern office"
+              />
+              <span class="card-photo-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" /></svg
+              ></span>
             </div>
             <h3>Software &amp; AI Engineering</h3>
             <p>
@@ -275,19 +218,24 @@
             </a>
           </div>
           <div class="card reveal">
-            <div class="card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                />
-              </svg>
+            <div class="card-photo">
+              <img
+                src="https://images.pexels.com/photos/34206104/pexels-photo-34206104.png?auto=compress&cs=tinysrgb&w=800"
+                alt="Diverse team engaged in a corporate communication presentation in a modern office"
+              />
+              <span class="card-photo-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                  /></svg
+              ></span>
             </div>
             <h3>Corporate Communication</h3>
             <p>
@@ -309,18 +257,23 @@
             </a>
           </div>
           <div class="card reveal">
-            <div class="card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                <polyline points="17 6 23 6 23 12" />
-              </svg>
+            <div class="card-photo">
+              <img
+                src="https://images.pexels.com/photos/8353799/pexels-photo-8353799.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Colleagues discussing growth charts during a digital strategy meeting"
+              />
+              <span class="card-photo-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" /></svg
+              ></span>
             </div>
             <h3>Digital Growth Consulting</h3>
             <p>
@@ -342,18 +295,23 @@
             </a>
           </div>
           <div class="card reveal">
-            <div class="card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <polyline points="9 12 11 14 15 10" />
-              </svg>
+            <div class="card-photo">
+              <img
+                src="https://images.pexels.com/photos/15543212/pexels-photo-15543212.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Diverse team brainstorming brand strategy around a table with mood boards"
+              />
+              <span class="card-photo-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" /></svg
+              ></span>
             </div>
             <h3>Product &amp; Brand Strategy</h3>
             <p>
@@ -396,7 +354,12 @@
               experience.
             </p>
             <div class="t-person">
-              <div class="t-avatar">AS</div>
+              <div class="t-avatar">
+                <img
+                  src="https://images.pexels.com/photos/32644641/pexels-photo-32644641.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+                  alt="Adeola S."
+                />
+              </div>
               <div>
                 <strong>Adeola S.</strong><span>CEO, Farmbox Africa</span>
               </div>
@@ -410,7 +373,12 @@
               immediately.
             </p>
             <div class="t-person">
-              <div class="t-avatar">MO</div>
+              <div class="t-avatar">
+                <img
+                  src="https://images.pexels.com/photos/31694789/pexels-photo-31694789.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+                  alt="Michael O."
+                />
+              </div>
               <div>
                 <strong>Michael O.</strong><span>Founder, SwiftStore</span>
               </div>
@@ -423,7 +391,12 @@
               Limited is a trusted partner for our growth journey.
             </p>
             <div class="t-person">
-              <div class="t-avatar">CA</div>
+              <div class="t-avatar">
+                <img
+                  src="https://images.pexels.com/photos/31454886/pexels-photo-31454886.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+                  alt="Chinwe A."
+                />
+              </div>
               <div><strong>Chinwe A.</strong><span>COO, MedixPlus</span></div>
             </div>
           </div>
@@ -485,35 +458,13 @@
 
     <!-- ===================== AI CHATBOT WIDGET ===================== -->
     <button class="chat-fab" id="chat-fab" aria-label="Open chat assistant">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path
-          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-        />
-      </svg>
+      <img src="./media/ai-chatbox.webp" alt="Bob, AI assistant" />
     </button>
     <div class="chat-panel" id="chat-panel">
       <div class="chat-head">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#AECC1E"
-          stroke-width="2"
-        >
-          <path
-            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-          />
-        </svg>
+        <img class="chat-head-avatar" src="./media/ai-chatbox.webp" alt="Bob" />
         <div>
-          <strong>Levanya Assistant</strong
+          <strong>Bob — AI Assistant</strong
           ><span>Usually replies instantly</span>
         </div>
         <span class="chat-dot"></span>
@@ -537,8 +488,8 @@
       </div>
       <div class="chat-body" id="chat-body">
         <div class="msg bot">
-          Hi there 👋 I'm the Levanya Assistant. Ask me about our services,
-          products, pricing, or how to reach the team.
+          Hi there 👋 I'm Bob, your virtual assistant at Taore LeVanya. Ask me
+          about our services, products, pricing, or how to reach the team.
         </div>
       </div>
       <div class="chat-suggest">
@@ -560,7 +511,7 @@
       </div>
     </div>
 
-    <script src="./script/footer.js"></script>
-    <script src="./script/script.js"></script>
+    <script src="./assets/script.js"></script>
+    <script src="./assets/footer.js"></script>
   </body>
 </html>

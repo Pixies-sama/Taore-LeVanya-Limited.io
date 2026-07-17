@@ -12,10 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navLinks.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen);
       navToggle.innerHTML = isOpen ? iconClose() : iconMenu();
+      document.body.classList.toggle('nav-open', isOpen);
     });
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       navLinks.classList.remove('open');
       navToggle.innerHTML = iconMenu();
+      document.body.classList.remove('nav-open');
     }));
   }
   function iconMenu(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}
