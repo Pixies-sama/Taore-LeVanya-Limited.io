@@ -96,6 +96,18 @@ button{font-family:inherit;cursor:pointer;}
 .btn-outline.on-dark:hover{background:#fff;color:var(--teal-800);}
 .btn-block{width:100%;justify-content:center;}
 
+@media (max-width:425px) {
+  .btn-primary {
+      width: 100%;
+      justify-content: space-between;
+    }
+        .btn-outline {
+          width: 100%;
+          justify-content: space-between;
+        }
+}
+
+
 /* ===================== HEADER ===================== */
 .site-header{
   position:sticky;top:0;z-index:100;
@@ -460,3 +472,4 @@ body.nav-open{overflow:hidden;}
 .chat-head-avatar{width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,0.4);}
 .msg.bot-row{display:flex;align-items:flex-end;gap:8px;}
 .msg-avatar{width:22px;height:22px;border-radius:50%;object-fit:cover;flex-shrink:0;margin-bottom:2px;}
+
