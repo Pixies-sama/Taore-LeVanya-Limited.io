@@ -149,7 +149,7 @@ body.nav-open{overflow:hidden;}
   .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
   .nav-links a{
     font-size:18px;font-weight:600;color:var(--ink);
-    padding:16px 0;text-align:center;
+    padding:16px 0px;text-align:center;
     width:100%;max-width:320px;
   }
   .nav-links a::after{display:none;}
@@ -158,7 +158,7 @@ body.nav-open{overflow:hidden;}
     display:flex;flex-direction:column;gap:12px;
     width:100%;max-width:320px;margin-top:20px;
   }
-  .mobile-cta-group .btn{width:100%;justify-content:center;}
+  .mobile-cta-group .btn{width:100%;justify-content:center;padding: 10px}
   .nav-toggle{display:block;}
 }
 
@@ -194,10 +194,80 @@ body.nav-open{overflow:hidden;}
 .mock-phone .row strong{font-size:9px;color:var(--teal-900);}
 
 /* ===================== TRUST BAR ===================== */
-.trust-bar{background:var(--teal-800);color:#fff;padding:34px 0;}
-.trust-bar .trust-label{font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;margin-bottom:22px;font-weight:700;}
-.trust-logos{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;}
-.trust-logos span{font-family:var(--font-head);font-weight:700;font-size:17px;opacity:0.9;letter-spacing:-0.02em;}
+/* .trust-bar{background:var(--teal-800);color:#fff;padding:0 0;}
+.trust-bar .trust-label{font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;margin-bottom:22px;font-weight:700; padding-top: 10px;}
+ .trust-logos{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;}
+.trust-logos span{font-family:var(--font-head);font-weight:700;font-size:17px;opacity:0.9;letter-spacing:-0.02em;} */
+
+.trust-bar {
+  background: var(--teal-800);
+  color: #fff;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.trust-bar .trust-label {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+.logos::before, .logos::after{
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logos::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(225, 225, 225, 0), var(--teal-900));
+}
+.logos::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(225, 225, 225, 0), var(--teal-900));
+}
+
+.logos-slide {
+  display: flex;
+  white-space: nowrap;
+  animation: slide 5s infinite linear;
+  width: max-content;
+}
+
+.logos-slide img {
+  height: 100px;
+  margin: 0 40px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+
 
 /* ===================== SERVICE / FEATURE CARDS ===================== */
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
