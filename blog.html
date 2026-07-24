@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog — Taore LeVanya Limited</title>
+    <title>
+      Blog — Insights on Technology, Communication & Growth | Taore LeVanya
+      Limited
+    </title>
     <meta
       name="description"
-      content="Insights that inspire and inform: ideas, strategies and trends on technology, communication and business growth."
+      content="Ideas, strategies and trends on technology, communication and business growth from the Taore LeVanya Limited team."
     />
+    <meta property="og:title" content="Taore LeVanya Blog" />
+    <meta
+      property="og:description"
+      content="Ideas, strategies and trends on technology, communication and business growth."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./assets/blog.css" />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
+    <!-- ===================== HEADER ===================== -->
     <header class="site-header">
       <nav class="nav wrap">
         <a href="index.html" class="brand">
@@ -60,7 +71,7 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Our Services</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="./blog/index.html" class="active">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li class="mobile-cta-group">
@@ -91,221 +102,239 @@
       </nav>
     </header>
 
-    <section class="page-hero">
+    <!-- ===================== HERO ===================== -->
+    <section class="blog-hero">
       <div class="wrap">
         <p class="eyebrow">Blog</p>
-        <h1>Insights that <span class="accent">Inspire</span> and Inform</h1>
+        <h1>Insights that <span>Inspire</span> and Inform</h1>
         <p>
           Ideas, strategies and trends on technology, communication and business
           growth.
         </p>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="grid-3">
-          <a href="#" class="blog-card reveal">
-            <div class="blog-thumb">
-              <img
-                src="./media/ai-works.webp"
-                alt="African software engineer coding, representing AI in Africa"
-              />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Technology</span>
-              <h3>How AI is Transforming SMEs in Africa</h3>
-              <div class="blog-meta">
-                <span>May 15, 2025</span><span>5 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="blog-card reveal">
-            <div class="blog-thumb">
-              <img
-                src="./media/clear-message.webp"
-                alt="Team presentation illustrating clear corporate messaging"
-              />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Communication</span>
-              <h3>The Power of Clear Messaging</h3>
-              <div class="blog-meta">
-                <span>May 1, 2025</span><span>4 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="blog-card reveal">
-            <div class="blog-thumb">
-              <img
-                src="./media/strategies.webp"
-                alt="Colleagues reviewing growth charts and digital strategy"
-              />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Growth</span>
-              <h3>Digital Strategies to Attract the Right Customers</h3>
-              <div class="blog-meta">
-                <span>Apr 20, 2025</span><span>6 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="blog-card reveal">
-            <div class="blog-thumb">
-              <img
-                src="./media/office7.webp"
-                alt="Professional focused on productivity tools at a workstation"
-              />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Productivity</span>
-              <h3>5 Tools Every SME Should Be Using</h3>
-              <div class="blog-meta">
-                <span>Apr 10, 2025</span><span>4 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="blog-card reveal">
-            <div class="blog-thumb">
-              <img
-                src="./media/office8.webp"
-                alt="Team brainstorming a brand identity with mood boards"
-              />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Branding</span>
-              <h3>Building a Brand That Stands Out</h3>
-              <div class="blog-meta">
-                <span>Mar 26, 2025</span><span>5 min read</span>
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="blog-card reveal">
-            <div class="blog-thumb">
-              <img
-                src="https://images.pexels.com/photos/16129728/pexels-photo-16129728.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Developer working across multiple monitors, tracking web trends"
-              />
-            </div>
-            <div class="blog-body">
-              <span class="blog-tag">Technology</span>
-              <h3>Web Trends to Watch in 2025</h3>
-              <div class="blog-meta">
-                <span>Mar 15, 2025</span><span>6 min read</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="wrap">
-        <div
-          class="cta-banner has-photo reveal"
-          style="background-image: url(&quot;assets/img/park-collab.jpg&quot;)"
-        >
-          <div class="cta-left">
-            <div class="cta-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 4h16v16H4z" opacity="0" />
-                <path d="M22 6l-10 7L2 6" />
-                <path d="M2 6h20v12H2z" />
-              </svg>
-            </div>
-            <div>
-              <h3>Subscribe to Our Newsletter</h3>
-              <p>
-                Get the latest insights and updates delivered to your inbox.
-              </p>
-            </div>
-          </div>
-          <a href="contact.html" class="btn btn-lime"
-            >Subscribe
+        <div class="blog-controls">
+          <div class="search-box">
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2.4"
-              stroke-linecap="round"
+              stroke-width="2"
             >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
-          </a>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search articles..."
+              aria-label="Search blog posts"
+            />
+          </div>
+          <div class="filter-pills" id="filter-pills">
+            <button class="filter-pill active" data-category="All">All</button>
+            <button class="filter-pill" data-category="Technology">
+              Technology
+            </button>
+            <button class="filter-pill" data-category="Communication">
+              Communication
+            </button>
+            <button class="filter-pill" data-category="Growth">Growth</button>
+            <button class="filter-pill" data-category="Productivity">
+              Productivity
+            </button>
+            <button class="filter-pill" data-category="Branding">
+              Branding
+            </button>
+          </div>
+        </div>
+        <p class="results-meta" id="results-meta"></p>
+      </div>
+    </section>
+
+    <!-- ===================== BLOG GRID ===================== -->
+    <section class="section">
+      <div class="wrap">
+        <div id="blog-grid" class="blog-grid" aria-live="polite">
+          <div class="blog-loading">Loading articles…</div>
         </div>
       </div>
     </section>
 
+    <!-- ===================== FOOTER ===================== -->
+    <!-- <footer class="blog-footer">
+      <div class="wrap">
+        <span class="footer-brand"
+          ><span
+            class="logo-dot"
+            style="width: 26px; height: 26px; font-size: 11px"
+            >TL</span
+          >
+          Taore LeVanya Limited</span
+        >
+        <span>&copy; 2025 Taore LeVanya Limited. All Rights Reserved.</span>
+        <a href="../contact.html">Contact Us</a>
+      </div>
+    </footer> -->
+
     <footer class="site-footer" id="site-footer"></footer>
 
-    <button class="chat-fab" id="chat-fab" aria-label="Open chat assistant">
-      <img src="./media/ai-chatbox.webp" alt="Bob, AI assistant" />
-    </button>
-    <div class="chat-panel" id="chat-panel">
-      <div class="chat-head">
-        <img class="chat-head-avatar" src="./media/ai-chatbox.webp" alt="Bob" />
-        <div>
-          <strong>Bob — AI Assistant</strong
-          ><span>Usually replies instantly</span>
-        </div>
-        <span class="chat-dot"></span>
-        <button
-          id="chat-close"
-          aria-label="Close chat"
-          style="background: none; border: none; color: #fff; margin-left: 6px"
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
-        </button>
-      </div>
-      <div class="chat-body" id="chat-body">
-        <div class="msg bot">
-          Hi there 👋 I'm Bob, your virtual assistant at Taore LeVanya. Ask me
-          about our services, products, pricing, or how to reach the team.
-        </div>
-      </div>
-      <div class="chat-suggest">
-        <span class="chip">Our services</span>
-        <span class="chip">Our products</span>
-        <span class="chip">Contact info</span>
-      </div>
-      <div class="chat-input">
-        <input
-          type="text"
-          id="chat-input-field"
-          placeholder="Type a message..."
-        />
-        <button id="chat-send" aria-label="Send">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
-          </svg>
-        </button>
-      </div>
-    </div>
+    <script src="../assets/footer.js"></script>
+    <script src="../assets/script.js"></script>
 
-    <script src="./assets/script.js"></script>
-    <script src="./assets/footer.js"></script>
+    <script>
+      (function () {
+        const DATA_URL = "../data/blog-data.json";
+        const grid = document.getElementById("blog-grid");
+        const searchInput = document.getElementById("search-input");
+        const pills = document.querySelectorAll(".filter-pill");
+        const resultsMeta = document.getElementById("results-meta");
+
+        let allPosts = [];
+        let activeCategory = "All";
+        let searchTerm = "";
+
+        // Strip HTML tags so search can match against the article body too.
+        function stripHtml(html) {
+          const tmp = document.createElement("div");
+          tmp.innerHTML = html;
+          return tmp.textContent || tmp.innerText || "";
+        }
+
+        function categoryClass(category) {
+          return "cat-" + category.toLowerCase();
+        }
+
+        function formatDate(iso) {
+          const d = new Date(iso + "T00:00:00");
+          return d.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          });
+        }
+
+        function renderCard(post) {
+          return `
+      <a href="post.html?slug=${encodeURIComponent(post.slug)}" class="post-card reveal in">
+        <div class="post-card-thumb">
+          <img src="${post.image}" alt="${escapeAttr(post.title)}" loading="lazy">
+        </div>
+        <div class="post-card-body">
+          <span class="cat-badge ${categoryClass(post.category)}">${post.category}</span>
+          <h3 class="post-card-title">${escapeHtml(post.title)}</h3>
+          <p class="post-card-excerpt">${escapeHtml(post.excerpt)}</p>
+          <div class="post-card-meta">
+            <span>${formatDate(post.date)}</span>
+            <span>${post.readTime}</span>
+          </div>
+        </div>
+      </a>
+    `;
+        }
+
+        function escapeHtml(str) {
+          const div = document.createElement("div");
+          div.textContent = str;
+          return div.innerHTML;
+        }
+        function escapeAttr(str) {
+          return String(str).replace(/"/g, "&quot;");
+        }
+
+        function applyFilters() {
+          let posts = allPosts.slice();
+
+          if (activeCategory !== "All") {
+            posts = posts.filter((p) => p.category === activeCategory);
+          }
+
+          if (searchTerm.trim()) {
+            const term = searchTerm.trim().toLowerCase();
+            posts = posts.filter((p) => {
+              const haystack = (
+                p.title +
+                " " +
+                p.category +
+                " " +
+                p.excerpt +
+                " " +
+                stripHtml(p.content)
+              ).toLowerCase();
+              return haystack.includes(term);
+            });
+          }
+
+          // Newest first
+          posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          render(posts);
+        }
+
+        function render(posts) {
+          if (!posts.length) {
+            grid.innerHTML = `
+        <div class="blog-empty" style="grid-column:1/-1;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <h3>No articles found</h3>
+          <p>Try a different search term or category.</p>
+          <button id="reset-filters">Reset filters</button>
+        </div>`;
+            document
+              .getElementById("reset-filters")
+              .addEventListener("click", () => {
+                searchInput.value = "";
+                searchTerm = "";
+                activeCategory = "All";
+                pills.forEach((p) =>
+                  p.classList.toggle("active", p.dataset.category === "All"),
+                );
+                applyFilters();
+              });
+          } else {
+            grid.innerHTML = posts.map(renderCard).join("");
+          }
+          resultsMeta.textContent = `${posts.length} article${posts.length === 1 ? "" : "s"}`;
+        }
+
+        pills.forEach((pill) => {
+          pill.addEventListener("click", () => {
+            pills.forEach((p) => p.classList.remove("active"));
+            pill.classList.add("active");
+            activeCategory = pill.dataset.category;
+            applyFilters();
+          });
+        });
+
+        let debounceTimer;
+        searchInput.addEventListener("input", (e) => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            searchTerm = e.target.value;
+            applyFilters();
+          }, 150);
+        });
+
+        fetch(DATA_URL)
+          .then((res) => {
+            if (!res.ok)
+              throw new Error(
+                "Failed to load blog-data.json (" + res.status + ")",
+              );
+            return res.json();
+          })
+          .then((data) => {
+            allPosts = data.posts || [];
+            applyFilters();
+          })
+          .catch((err) => {
+            grid.innerHTML = `
+        <div class="blog-empty" style="grid-column:1/-1;">
+          <h3>Couldn't load articles</h3>
+          <p>${escapeHtml(err.message)}. If you're opening this file directly from your computer, run it through a local server instead (see README).</p>
+        </div>`;
+            console.error(err);
+          });
+      })();
+    </script>
   </body>
 </html>

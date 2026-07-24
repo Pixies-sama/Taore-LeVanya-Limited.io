@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Article — Taore LeVanya Blog</title>
+    <meta
+      id="meta-description"
+      name="description"
+      content="Read the latest insights from Taore LeVanya Limited."
+    />
+    <meta id="og-title" property="og:title" content="Taore LeVanya Blog" />
+    <meta
+      id="og-description"
+      property="og:description"
+      content="Read the latest insights from Taore LeVanya Limited."
+    />
+    <meta id="og-image" property="og:image" content="" />
+    <meta property="og:type" content="article" />
+    <link rel="stylesheet" href="./assets/blog.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <nav class="nav wrap">
+        <a href="index.html" class="brand">
+          <svg
+            class="brand-logo"
+            viewBox="0 8 118 104"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="60"
+              cy="62"
+              r="46"
+              fill="none"
+              stroke="#AECC1E"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-dasharray="245 60"
+              transform="rotate(-35 60 62)"
+            />
+            <g
+              stroke="#125C56"
+              stroke-width="3"
+              stroke-linecap="round"
+              fill="none"
+            >
+              <circle cx="8" cy="46" r="3.2" fill="#125C56" />
+              <path d="M8 46 H22" />
+              <circle cx="6" cy="60" r="3.2" fill="#125C56" />
+              <path d="M6 60 H24" />
+              <circle cx="8" cy="74" r="3.2" fill="#125C56" />
+              <path d="M8 74 H22" />
+            </g>
+            <path d="M32 34 H72 L62 46 H50 V80 H40 V46 H30 Z" fill="#0E4B47" />
+            <path d="M56 50 H66 V78 H84 V88 H56 Z" fill="#1D8A7C" />
+            <path
+              d="M76 38 h30 a8 8 0 0 1 8 8 v10 a8 8 0 0 1 -8 8 h-16 l-8 9 v-9 h-6 a8 8 0 0 1 -8 -8 v-10 a8 8 0 0 1 8 -8 z"
+              fill="#125C56"
+            />
+            <circle cx="86" cy="52" r="2.2" fill="#AECC1E" />
+            <circle cx="94" cy="52" r="2.2" fill="#AECC1E" />
+            <circle cx="102" cy="52" r="2.2" fill="#AECC1E" />
+          </svg>
+          <span>TAORE LEVANYA<small>LIMITED</small></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="./blog/index.html" class="active">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li class="mobile-cta-group">
+            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+            <a href="contact.html" class="btn btn-lime">Let's Talk</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-lime">Let's Talk</a>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Populated by JS once the post is found -->
+    <main id="article-root">
+      <div class="section">
+        <div class="wrap">
+          <div class="blog-loading">Loading article…</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="../assets/footer.js"></script>
+    <script src="./assets/script.js"></script>
+
+    <script>
+      (function () {
+        const DATA_URL = "../data/blog-data.json";
+        const root = document.getElementById("article-root");
+
+        function getSlug() {
+          const params = new URLSearchParams(window.location.search);
+          return params.get("slug");
+        }
+
+        function categoryClass(category) {
+          return "cat-" + category.toLowerCase();
+        }
+
+        function formatDate(iso) {
+          const d = new Date(iso + "T00:00:00");
+          return d.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          });
+        }
+
+        function initials(name) {
+          return name
+            .split(" ")
+            .map((n) => n[0])
+            .join("")
+            .slice(0, 2)
+            .toUpperCase();
+        }
+
+        function escapeHtml(str) {
+          const div = document.createElement("div");
+          div.textContent = str;
+          return div.innerHTML;
+        }
+
+        function renderNotFound() {
+          root.innerHTML = `
+      <div class="article-not-found wrap">
+        <h2>Article not found</h2>
+        <p>The post you're looking for doesn't exist or may have been moved.</p>
+        <a href="blog.html">Back to Blog</a>
+      </div>`;
+        }
+
+        function renderRelatedCard(post) {
+          return `
+      <a href="post.html?slug=${encodeURIComponent(post.slug)}" class="post-card">
+        <div class="post-card-thumb"><img src="${post.image}" alt="${escapeHtml(post.title)}" loading="lazy"></div>
+        <div class="post-card-body">
+          <span class="cat-badge ${categoryClass(post.category)}">${post.category}</span>
+          <h3 class="post-card-title" style="font-size:15.5px;">${escapeHtml(post.title)}</h3>
+          <div class="post-card-meta"><span>${formatDate(post.date)}</span><span>${post.readTime}</span></div>
+        </div>
+      </a>`;
+        }
+
+        function buildShareUrls(post, pageUrl) {
+          const text = encodeURIComponent(post.title);
+          const url = encodeURIComponent(pageUrl);
+          return {
+            twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+            facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+            whatsapp: `https://wa.me/?text=${text}%20${url}`,
+          };
+        }
+
+        function renderArticle(post, allPosts) {
+          const pageUrl = window.location.href;
+          const share = buildShareUrls(post, pageUrl);
+
+          // SEO meta (best-effort — see README on the limits of client-rendered SEO)
+          document.getElementById("page-title").textContent =
+            post.title + " — Taore LeVanya Blog";
+          document
+            .getElementById("meta-description")
+            .setAttribute("content", post.excerpt);
+          document
+            .getElementById("og-title")
+            .setAttribute("content", post.title);
+          document
+            .getElementById("og-description")
+            .setAttribute("content", post.excerpt);
+          document
+            .getElementById("og-image")
+            .setAttribute("content", post.image);
+
+          // JSON-LD structured data
+          const ld = document.createElement("script");
+          ld.type = "application/ld+json";
+          ld.textContent = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            image: [post.image],
+            datePublished: post.date,
+            author: { "@type": "Person", name: post.author },
+            publisher: {
+              "@type": "Organization",
+              name: "Taore LeVanya Limited",
+            },
+          });
+          document.head.appendChild(ld);
+
+          // Related posts: same category first, then fill with most recent others
+          let related = allPosts.filter(
+            (p) => p.category === post.category && p.id !== post.id,
+          );
+          if (related.length < 3) {
+            const fillers = allPosts
+              .filter((p) => p.id !== post.id && !related.includes(p))
+              .sort((a, b) => new Date(b.date) - new Date(a.date));
+            related = related.concat(fillers).slice(0, 3);
+          } else {
+            related = related
+              .sort((a, b) => new Date(b.date) - new Date(a.date))
+              .slice(0, 3);
+          }
+
+          root.innerHTML = `
+      <div class="article-hero wrap">
+        <a href="blog.html" class="article-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Blog
+        </a>
+        <div class="article-header">
+          <span class="cat-badge ${categoryClass(post.category)}">${post.category}</span>
+          <h1>${escapeHtml(post.title)}</h1>
+          <div class="article-meta-row">
+            <span class="author-chip"><span class="author-avatar">${initials(post.author)}</span> ${escapeHtml(post.author)}</span>
+            <span>${formatDate(post.date)}</span>
+            <span>${post.readTime}</span>
+          </div>
+        </div>
+        <div class="article-featured-img">
+          <img src="${post.image}" alt="${escapeHtml(post.title)}">
+        </div>
+      </div>
+
+      <div class="section" style="padding-top:0;">
+        <div class="wrap">
+          <div class="article-layout">
+            <div class="share-rail">
+              <span class="share-rail-label">Share</span>
+              <a class="share-btn" href="${share.twitter}" target="_blank" rel="noopener" aria-label="Share on X / Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.4 22H1.3l8.1-9.3L1 2h7l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+              </a>
+              <a class="share-btn" href="${share.linkedin}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48s1.34 2.98 2.98 2.98 2.98-1.34 2.98-2.98S6.62 3.5 4.98 3.5zM2.4 21.5h5.16V8.98H2.4V21.5zM9.5 8.98v12.52h5.15v-6.96c0-1.84.35-3.62 2.63-3.62 2.25 0 2.28 2.1 2.28 3.74v6.84H24v-7.7c0-4.62-1-8.18-6.4-8.18-2.6 0-4.34 1.43-5.05 2.78h-.07V8.98H9.5z"/></svg>
+              </a>
+              <a class="share-btn" href="${share.facebook}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+              </a>
+              <a class="share-btn" href="${share.whatsapp}" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.4 4.7.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.3.9.9-3.2-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+              </a>
+            </div>
+
+            <div>
+              <article class="article-body">${post.content}</article>
+
+              <div class="author-card">
+                <span class="author-avatar">${initials(post.author)}</span>
+                <div>
+                  <h4>${escapeHtml(post.author)}</h4>
+                  <p>${escapeHtml(post.authorBio)}</p>
+                </div>
+              </div>
+
+              ${
+                related.length
+                  ? `
+              <div class="related-section">
+                <h3>Related Articles</h3>
+                <div class="related-grid">
+                  ${related.map(renderRelatedCard).join("")}
+                </div>
+              </div>`
+                  : ""
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+        }
+
+        const slug = getSlug();
+        if (!slug) {
+          renderNotFound();
+        } else {
+          fetch(DATA_URL)
+            .then((res) => {
+              if (!res.ok)
+                throw new Error(
+                  "Failed to load blog-data.json (" + res.status + ")",
+                );
+              return res.json();
+            })
+            .then((data) => {
+              const posts = data.posts || [];
+              const post = posts.find((p) => p.slug === slug);
+              if (!post) {
+                renderNotFound();
+              } else {
+                renderArticle(post, posts);
+              }
+            })
+            .catch((err) => {
+              root.innerHTML = `<div class="wrap"><div class="blog-empty"><h3>Couldn't load this article</h3><p>${escapeHtml(err.message)}</p></div></div>`;
+              console.error(err);
+            });
+        }
+      })();
+    </script>
+  </body>
+</html>
