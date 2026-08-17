@@ -364,7 +364,7 @@ body.nav-open{overflow:hidden;}
 @media (max-width:700px){.stat-strip{grid-template-columns:repeat(2,1fr);gap:22px 0;} .stat-strip div{border-right:none;}}
 
 /* ===================== PRODUCTS ===================== */
-.product-row{display:flex;gap:26px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);}
+.product-row{display:flex;gap:26px;align-items:center;padding:26px 0;border:1px solid var(--line); border-radius: 15px;}
 .product-row:last-child{border-bottom:none;}
 .product-icon{width:58px;height:58px;border-radius:14px;background:var(--teal-800);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .product-icon svg{width:26px;height:26px;stroke-width:2.4;}
