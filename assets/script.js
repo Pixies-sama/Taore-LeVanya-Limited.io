@@ -146,4 +146,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Legal page: table-of-contents scroll-spy ---------- */
+  const legalToc = document.querySelector('.legal-toc');
+  if (legalToc) {
+    const tocLinks = legalToc.querySelectorAll('a');
+    const targets = Array.from(tocLinks)
+      .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+      .filter(Boolean);
+    if ('IntersectionObserver' in window && targets.length) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(a => a.classList.remove('active'));
+            const match = legalToc.querySelector(`a[href="#${entry.target.id}"]`);
+            if (match) match.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-110px 0px -70% 0px' });
+      targets.forEach(t => spy.observe(t));
+    }
+  }
+
 });
