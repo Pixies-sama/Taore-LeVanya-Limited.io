@@ -103,11 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const responses = {
       services: "We offer four core services: Software & AI Engineering, Corporate Communication, Digital Growth Consulting, and Product & Brand Strategy. Want details on one of these?",
-      pricing: "Pricing depends on project scope. Most engagements start with a free discovery call so we can recommend the right package. Want me to connect you with the team?",
-      contact: "You can reach us at +234 704 563 6277 or info@taorelevanya.com. Our office is at E8 Mojisola Mall, Iyanu Bus Stop, Ibeshe, Ikorodu, Lagos.",
       products: "We build LEVANYA CRM, Communi Suite, Insight Dashboard, and Content Craft AI — all designed to help SMEs manage customers, communication, and content in one place.",
-      default: "Thanks for reaching out! I can help with questions about our services, products, pricing, or getting in touch with the team. What would you like to know?"
+      pricing: "Pricing depends on project scope. Most engagements start with a free discovery call so we can recommend the right package. Want me to connect you with the team?",
+      ai: "Every engagement can be paired with AI tools — a chatbot like me for round-the-clock lead capture, an AI lead scorer, an AI content generator for blog drafts, and an AI product recommender quiz on the homepage. Want details on any of these?",
+      about: "Taore LeVanya Limited is a technology and communication consulting firm based in Lagos. We help SMEs innovate, communicate and grow by combining software & AI engineering with strategic communication expertise. There's more on our About page if you'd like the full story.",
+      hours: "We're open Monday to Friday, 9:00 AM – 5:00 PM. Feel free to message us anytime though — we'll get back to you as soon as we're open.",
+      email: "Our email is info@taorelevanya.ng — feel free to reach out anytime.",
+      phone: "Our phone number is +234 704 563 6277.",
+      address: "You'll find us at E8 Mojisola Mall, Iyanu Bus Stop, Ibeshe, Ikorodu, Lagos.",
+      contact: "Here's how to reach us — Phone: +234 704 563 6277, Email: info@taorelevanya.ng, Office: E8 Mojisola Mall, Iyanu Bus Stop, Ibeshe, Ikorodu, Lagos.",
+      greeting: "Hey there! I'm Bob 👋 I can help with questions about our services, products, pricing, AI features, business hours, or how to reach the team. What would you like to know?",
+      thanks: "You're welcome! Let me know if there's anything else I can help with.",
+      default: "Thanks for reaching out! I can help with questions about our services, products, pricing, AI features, business hours, or how to reach the team. What would you like to know?"
     };
+
+    // Matches a keyword as a whole word, so "again" doesn't trigger "ai", etc.
+    function hasWord(text, word) {
+      return new RegExp('\\b' + word + '\\b').test(text);
+    }
 
     function addMsg(text, who) {
       const div = document.createElement('div');
@@ -120,10 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function botReply(userText) {
       const t = userText.toLowerCase();
       let key = 'default';
-      if (t.includes('service')) key = 'services';
-      else if (t.includes('price') || t.includes('cost') || t.includes('quote')) key = 'pricing';
-      else if (t.includes('contact') || t.includes('phone') || t.includes('email') || t.includes('address')) key = 'contact';
+
+      // Specific contact details are checked before the general "contact" bucket,
+      // so "what's your phone number" answers with just the phone number, while
+      // "how can I reach you" still gets the full set of details.
+      if (hasWord(t, 'email') || t.includes('e-mail')) key = 'email';
+      else if (hasWord(t, 'phone') || hasWord(t, 'call') || t.includes('number')) key = 'phone';
+      else if (hasWord(t, 'address') || hasWord(t, 'location') || hasWord(t, 'office') || t.includes('where are you') || t.includes('find you')) key = 'address';
+      else if (t.includes('reach') || t.includes('contact') || t.includes('get in touch') || t.includes('talk to')) key = 'contact';
+      else if (hasWord(t, 'hour') || hasWord(t, 'hours') || t.includes('open') || t.includes('close')) key = 'hours';
+      else if (t.includes('service')) key = 'services';
       else if (t.includes('product')) key = 'products';
+      else if (t.includes('price') || t.includes('cost') || t.includes('quote') || t.includes('pricing')) key = 'pricing';
+      else if (hasWord(t, 'ai') || t.includes('artificial intelligence') || t.includes('chatbot')) key = 'ai';
+      else if (t.includes('about') || t.includes('who are you') || t.includes('company')) key = 'about';
+      else if (hasWord(t, 'hi') || hasWord(t, 'hello') || hasWord(t, 'hey')) key = 'greeting';
+      else if (t.includes('thank')) key = 'thanks';
+
       setTimeout(() => addMsg(responses[key], 'bot'), 500);
     }
 
