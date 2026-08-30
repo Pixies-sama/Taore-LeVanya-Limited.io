@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const responses = {
       services: "We offer four core services: Software & AI Engineering, Corporate Communication, Digital Growth Consulting, and Product & Brand Strategy. Want details on one of these?",
-      products: "We build LEVANYA CRM, Communi Suite, Insight Dashboard, and Content Craft AI — all designed to help SMEs manage customers, communication, and content in one place.",
+      products: "We build CVPly and Oroaje, an AI career assistant and CV builder as well as an print merchandize ordering platform with built-in marketing intelligence. Our branded service Buff My Profile provides human business writing services such as CV/LinkedIn revamp, business writing, book writing and AI content training services for professionals and SMEs.",
       pricing: "Pricing depends on project scope. Most engagements start with a free discovery call so we can recommend the right package. Want me to connect you with the team?",
       ai: "Every engagement can be paired with AI tools — a chatbot like me for round-the-clock lead capture, an AI lead scorer, an AI content generator for blog drafts, and an AI product recommender quiz on the homepage. Want details on any of these?",
       about: "Taore LeVanya Limited is a technology and communication consulting firm based in Lagos. We help SMEs innovate, communicate and grow by combining software & AI engineering with strategic communication expertise. There's more on our About page if you'd like the full story.",
